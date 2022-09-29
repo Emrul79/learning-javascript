@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+     background-color: #00204a;
+}
+.cart{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-inner{
+    border-radius: 20px;
+    width: 380px;
+    height: 360px;
+    background-color: aliceblue;
+}
+.cart-details{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+.cart-details h3{
+    font-family: sans-serif;
+    
+}
+.cart-details button{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgb(100, 214, 100);
+    border: none;
+    transition: 0.5s all ease;
+    border-radius: 10px;
+}
+.cart-details button:hover{
+    color: #fff;
+    background-color: #00204a;
+}
+#error{
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: red;
+}
+.simple-calculator{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner{
+    width: 500px;
+    height: 200px;
+    background-color: aqua;
+}
+.number{
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
+#num1,#num2{
+    padding: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+#result{
+    text-align: center;
+    padding: 20px;
+    font-size: 25px;
+    color: rgba(128, 0, 32, 0.911);
+}
+.my-btns{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.btn{
+    padding: 10px;
+}
+
+
+
+.section1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myFirstCounter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 600px;
+    padding: 30px;
+    background-color: rgb(207, 255, 239);
+}
+h1{
+    padding: 10px;
+    font-size: 30px;
+    color: brown;
+}
+#countValue{
+    font-size: 45px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.mybutton{
+    width: 130px;
+    padding: 10px 30px;
+    
+}
+.increment{
+    margin-right: 20px;
+    background-color: green;
+    border-radius: 15px;
+    border: 1px solid;
+}
+.decrement{
+   
+    background-color: rgb(128, 0, 0);
+    border-radius: 15px;
+    border: 1px solid;
+}
+.save{  margin-left: 10px;
+        background-color: rgb(0, 219, 164);
+        border-radius: 15px;
+        border: 1px solid;
+}
+.btnsave{  margin-left: 10px;
+        background-color: rgb(3, 19, 15);
+        border-radius: 15px;
+        border: 1px solid;
+        color: #fff;
+}
+#savenumber{
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid;
+}
+.toggole{
+    width: 70px;
+    height: 30px;
+    background-color: antiquewhite;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border-radius: 70px;
+}
+#span{
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 3px 5px 7px 5px ;
+    margin-bottom: 6px !important;
+    transition: 0.5s all;
+}
+.myspan{
+    margin-left:40px !important;
+}
+.hello{
+    display: none;
+}
+
+
+
+
+
+.backjack{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.backjack-inner{
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: green;
+}
+.content{
+    text-align: center;
+    padding: 20px;
+}
+.content h1{
+    font-family: sans-serif;
+    color: rgb(214, 214, 25);
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 5px;
+}
+.content h3{
+    font-size: 35px;
+    color: #fff;
+    padding: 20px;
+}
+.content p{
+    font-size: 28px;
+    color: #fff;
+    margin: 15px;
+}
+#startgame{
+    font-size: 18px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding:10px 30px;
+    transition: 0.5s all;
+}
+#startgame:hover{
+    color: #fff;
+    background-color: #00204a;
+}
+#newCard{
+     font-size: 18px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding:10px 30px;
+    transition: 0.5s all;
+    margin-left: 10px;
+}
+#newCard:hover{
+    color: #fff;
+    background-color: #4a0010;
+}

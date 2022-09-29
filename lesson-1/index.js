@@ -30,6 +30,35 @@ console.log(5 + +"7");//output=12 | when we put a plus sing befoere a string , i
 
 console.log('5' + 7);//output=57
 
+
+
+//Counter App End here 
+
+
+
+
+
+
+//Create a function .add3points() and remove2points ,and have them. add and remove points from mypoints veriable.
+
+let myPoints=0;
+
+function add3points(){
+    return myPoints += 3;
+}
+function remove2points() {
+  return (myPoints -= 2);
+}
+
+add3points()//output=3;
+add3points()//output=3+3||6
+remove2points()//output=6-2||4
+remove2points();//output=6-2-2||2
+console.log(add3points());//output=2+3||5
+
 */
 
-/*Counter App End here */
+
+//Topic:Array-composite/ complex data type.
+// array:Ordered List of items;
+//1:array is zero(o) indexed.
