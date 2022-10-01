@@ -53,7 +53,7 @@ mybutton.forEach(function (btn) {
     const style = e.currentTarget.classList;
     if (style.contains("increment")) {
       count++;
-      countshow.innerHTML = count;
+      countshow.innerHTML = count;z
     } else if (style.contains("decrement")) {
       count--;
       countshow.innerHTML = count;
