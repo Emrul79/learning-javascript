@@ -1,5 +1,5 @@
-let firstCart = 6;
-let secondCart = 1;
+let firstCart = getRandomCard()
+let secondCart = getRandomCard();
 let myCards = [firstCart, secondCart];
 let resut = firstCart + secondCart;
 let messege = "";
@@ -10,9 +10,19 @@ let startgame = document.getElementById("startgame");
 let newCard = document.getElementById("newCard");
 let randomNumber = Math.floor(Math.random() * 21);
 
+
+
+
+function getRandomCard(){
+  return Math.floor(Math.random()*21)
+}
+
 function renderGame() {
   //render out first card and second card.
-  cards.textContent = myCards[0] + " + " + myCards[1] + " + " + myCards[2];
+  cards.textContent = 'Cards : '
+  for(let i=0; i<myCards.length; i++){
+   cards.textContent += myCards[i] + ' ';
+  }
   if (resut < 21) {
     messege = "Do you want to play a game?";
   } else if (resut === 21) {
@@ -26,9 +36,9 @@ function renderGame() {
 startgame.addEventListener("click", renderGame);
 
 newCard.addEventListener("click", () => {
-  let card = 8;
+  let card = getRandomCard();
   resut += card;
   myCards.push(card);
-  console.log(myCards);
+  
   renderGame();
 });
