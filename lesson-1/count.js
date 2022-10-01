@@ -1,4 +1,4 @@
-for (let count = 0; count < 11; count++) {
-    console.log(count);
-    
+const myfunction=(arg)=>{
+    return arg * arg;
 }
+myfunction(7)
