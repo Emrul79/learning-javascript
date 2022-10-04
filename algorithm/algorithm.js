@@ -30,3 +30,63 @@ algorithm is language independent.we can implement it with any type of language.
 //time complexity: amount of time taken by an algorithm to run, as a function of input size.
 //space complexity: amount of memory taken by an algorithm to run,as a function of input size.
 //by evaluating against the input size ,the analysis is not only machine independent but the comparison is also more appropiate.
+
+
+//Big-O notation:
+//the worst case complexity of an algorithm is represented using the Big-O notation.
+//big-o notation describes the complexity of an algorithm using algebric terms.
+//it has two important characteristics
+//1.it is expressed in turms of the input.
+//it focuses on the bigger picture without getting caught up in the minute details.
+
+
+//Big-O time complexity.
+function summation(n){
+    let sum=0;
+    for(var i=0; i<=n; i++){
+        sum += i;
+    }
+    return sum;
+}
+summation(4)
+//in the function ,if n=5; 
+//line 1 exicute once.
+//line 2 exicute once.
+//line 3 is a loop defination.it also run once.
+//return line also run once.
+//***but line 4 ,it is in the loop. so it will exicute 5 times as n=5;
+//***if n=1000? it will exicute 1000 times. so it depends on input n.(time complexity is defended on the input size)
+//so we can say that: loop will defends on input (n);
+
+
+//Big-O  time complexity focuses on the bigger picture without getting caught up in the minute details.
+
+
+//Time -Complexity:
+//1. O(n)--> Linear time complexity ; what thats mean is that=size of the input increases the time complexity also increases.
+//any time you see a loop in your algorithm , most of the time you can safely say the time complexity is atleast linear (not fixed but most of the time).
+
+//2. O(1)--> Constant time complexity ; for example:- 
+function summaTionwithConstant(n){
+       return n/2 * (n + 1)
+}
+//it also doing the same thing as our previous function do. 
+//but it has no loop. it axicute only once whatever the input is.
+//so it's time complexity is fixed=> O(1);
+
+/*TRICKS:
+1.if function has 2 loop inside, the complexity will be = O(n^2) or Quadratic.
+2.if function has 3 loop inside, the complexity will be = O(n^3) or Cubic.
+*/
+
+
+/*
+***Space Complexity*** /it's idea also remain same.
+
+
+1.if the memory does not depend on the input size. the space-complexity is Constant=> O(1);
+-> for example the sorting algorithm will sort the whole array without using additional array. so it's complexity will be constant.
+2. if the proggram needed extra space and it grows with the input size growses then the complexity will be linear. O(n);
+3.if the proggram needed extra spaces but not as the size of input. the the complexity will be Logarithmic . O(logn);
+*/
+
