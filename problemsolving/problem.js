@@ -84,4 +84,3 @@ while (orginal > 0) {
 }
 }
 ispalindrome(121)
-

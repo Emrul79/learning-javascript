@@ -1,4 +1,4 @@
-let firstCart = getRandomCard()
+let firstCart = getRandomCard();
 let secondCart = getRandomCard();
 let myCards = [firstCart, secondCart];
 let resut = firstCart + secondCart;
@@ -10,18 +10,15 @@ let startgame = document.getElementById("startgame");
 let newCard = document.getElementById("newCard");
 let randomNumber = Math.floor(Math.random() * 21);
 
-
-
-
-function getRandomCard(){
-  return Math.floor(Math.random()*21)
+function getRandomCard() {
+  return Math.floor(Math.random() * 21);
 }
 
 function renderGame() {
   //render out first card and second card.
-  cards.textContent = 'Cards : '
-  for(let i=0; i<myCards.length; i++){
-   cards.textContent += myCards[i] + ' ';
+  cards.textContent = "Cards : ";
+  for (let i = 0; i < myCards.length; i++) {
+    cards.textContent += myCards[i] + " ";
   }
   if (resut < 21) {
     messege = "Do you want to play a game?";
@@ -39,6 +36,7 @@ newCard.addEventListener("click", () => {
   let card = getRandomCard();
   resut += card;
   myCards.push(card);
-  
+
   renderGame();
 });
+console.log("i love github");
