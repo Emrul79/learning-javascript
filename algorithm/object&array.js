@@ -19,3 +19,15 @@ the complexity will be Linear.O(n);*/
 /* Object.values: whice returns the array of all the values. So the complexity depends on n number of values.
 the complexity will be Linear.O(n);*/
 // and Object.entries is also have the Linear time-Complexity.O(n);
+
+
+//Array:-Big-O
+//an array is an ordered collection of values;
+//we started with index zero(0) and incrementing one(1);
+//Insert/Remove at the end of an array,time complexity will be constant;O(1);
+//Insert/Remove at the beginning of an array,time complexity will be linear; O(n);
+//Accessing => O(1)//constant;
+//Searching=> O(n)// cause the element can be the last element of an array.
+//Push/pop=>O(1);
+//shift/unshift/concat/slice/splice->O(n);
+//forEach/map/filter/reduce->O(n)
