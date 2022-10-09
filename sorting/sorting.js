@@ -76,4 +76,41 @@ function InsertionSort(array){
   return array
 }
 
-console.log(InsertionSort([4,3,5,1,23,4,65,32,4,5,3,2,2,34,534]));
+// console.log(InsertionSort([4,3,5,1,23,4,65,32,4,5,3,2,2,34,534]));
+
+//again do this:
+function insertion(array){
+  for(var i=1; i<array.length; i++){
+    let insert= array[i];
+    let priveous= i-1;
+    while (priveous >= 0 && array[priveous] > insert) {
+      array[priveous + 1] = array[priveous];
+      priveous = priveous - 1;
+    }
+    array[priveous+1] = insert;
+  }
+  return array;
+}
+
+// console.log(insertion([4, 3, 5, 1, 23, 4, 65, 32, 4, 5, 3, 2, 2, 34, 534]));
+
+//bubblesort:
+
+function bubble(array){
+  let switches;
+  do{
+     switches = false;
+  for (var i=0; i<array.length; i++){
+   
+    if(array[i] > array[i+1]){
+     let temp  = array[i] ;
+    array[i]= array[i+1];
+    array[i+1] = temp;
+    switches=true
+
+    }
+  }
+  }while(switches);
+  return array;
+}
+console.log(bubble([2,34,4,2,2,5,2,4,6,7,-6,2,3]));
