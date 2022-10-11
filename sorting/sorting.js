@@ -76,3 +76,21 @@ function InsertionSort(array){
   return array
 }
 
+//implement insertion sort in decending order:
+function insertion(array){
+  for(var i=1; i<array.length; i++){
+    let insertion= array[i];
+    let push= i-1;
+    while(push>=0 && array[push]<insertion){
+      array[push+1] = array[push];
+      push= push-1;
+    }
+    array[push+1]= insertion;
+  }
+  return array;
+}
+console.log(insertion([9, 7, 6, 9, 4, 5]));
+
+//Quick sort:
+//given an array of integer ,sort the array:
+
