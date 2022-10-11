@@ -89,8 +89,18 @@ function insertion(array){
   }
   return array;
 }
-console.log(insertion([9, 7, 6, 9, 4, 5]));
+
 
 //Quick sort:
 //given an array of integer ,sort the array:
+//quick sort idea:
 
+// identify the pivot element in the array:
+//pick last element as pivot;
+//pick a rAsndom element as pivot;
+//picl median as pivot;
+
+//put everything thats smaller than the pivot into a 'left' array and everything that's greater than the pivot into 'right' array
+// repeat the proccess for the individual 'left' and 'right' array of the length 1 which is sorted by defination;
+
+//repeatedly concatenate the left array , pivot and right array till one sorted array remains;
