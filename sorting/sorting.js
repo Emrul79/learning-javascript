@@ -41,13 +41,9 @@ function bubbleSort(array) {
   return array;
 }
 
-
 //this bubble sort algorithm has two loop; so the time complexity of this algorithm is => O(n^2);
 
-
-
 //Insertion sort:
-
 
 // Virtually split the array into a sorted and an unsorted part.
 //Assume that the first element is already sorted and remaining elements are unsorted .
@@ -57,38 +53,103 @@ function bubbleSort(array) {
 //Insert the selected elements at the right Index.
 //repeat till all the unsorted elements are placed in the right order.
 
-
 //Insertion sort sproblem solve:
 //problem:implement the Insertion sort:
 
 //solution:
 
-function InsertionSort(array){
-  for(var i=1; i<array.length; i++){
-    let numberToInsert= array[i]; //[9,7,6,9,4,5]=>i=3; j=0;j=4;
-    let j= i-1;
-    while(j>=0 && array[j] > numberToInsert){
-      array[j+1] = array[j]//j=1===3; j=4;
-      j=j-1;
+function InsertionSort(array) {
+  for (var i = 1; i < array.length; i++) {
+    let numberToInsert = array[i]; //[9,7,6,9,4,5]=>i=3; j=0;j=4;
+    let j = i - 1;
+    while (j >= 0 && array[j] > numberToInsert) {
+      array[j + 1] = array[j]; //j=1===3; j=4;
+      j = j - 1;
     }
-    array[j+1] = numberToInsert
-  }
-  return array
-}
-
-//implement insertion sort in decending order:
-function insertion(array){
-  for(var i=1; i<array.length; i++){
-    let insertion= array[i];
-    let push= i-1;
-    while(push>=0 && array[push]<insertion){
-      array[push+1] = array[push];
-      push= push-1;
-    }
-    array[push+1]= insertion;
+    array[j + 1] = numberToInsert;
   }
   return array;
 }
+
+//implement insertion sort in decending order:
+function insertion(array) {
+  for (var i = 1; i < array.length; i++) {
+    let insertion = array[i];
+    let push = i - 1;
+    while (push >= 0 && array[push] < insertion) {
+      array[push + 1] = array[push]; //[3,2,12,32,2,3]push=0; push+1=array[1]=3//
+      push = push - 1;
+    }
+    array[push + 1] = insertion;
+  }
+  return array;
+}
+
+
+//bubble-sort implement with uniqe value:
+function bubblesort(array) {
+  let switched;
+  do {
+    switched = false;
+    for (var i = 1; i < array.length; i++) {
+      if (array[i] < array[i - 1]) {
+        let temp = array[i];
+        array[i] = array[i - 1];
+        array[i - 1] = temp;
+        switched = true;
+      }
+    }
+  } while (switched);
+  let narray = array.filter((arr, index) => array.indexOf(arr) === index);
+  return narray;
+}
+
+
+//all in constractor function:
+function Myfunction(array) {
+  this.myarray = array;
+
+  this.uniqevalue = function (myarray) {
+    return myarray.filter((arr, index) => myarray.indexOf(arr) === index);
+  };
+  this.bubblesort=function(array){
+    let switched;
+    do {
+      switched = false;
+      for (var i = 1; i < array.length; i++) {
+        if (array[i] < array[i - 1]) {
+          let temp = array[i];
+          array[i] = array[i - 1];
+          array[i - 1] = temp;
+          switched = true;
+        }
+      }
+    } while (switched);
+    return array;
+  }
+
+  this.insertionSort=function(array){
+    for(var i=1; i<array.length; i++){
+      let insert=array[i];
+      let priveous= i-1;
+
+      while(priveous>=0 && array[priveous]>insert){
+        array[priveous+1]=array[priveous];
+        priveous=priveous-1;
+      }
+      array[priveous+1] = insert;
+    }
+    return array;
+  }
+}
+let err = [
+  23, 2, 1, 34, 98, 1, 44343, 35, 23, 2, 42, 45234, 2, 4214, 2, 24, -23, -45,
+];
+let newf1 = new Myfunction(err);
+console.log(newf1.insertionSort(err));
+
+//insertion:
+
 
 
 //Quick sort:
