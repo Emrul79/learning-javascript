@@ -140,12 +140,53 @@ function Myfunction(array) {
       array[priveous+1] = insert;
     }
     return array;
+  };
+
+  this.quickSort=function(array){
+      if (array.length < 2) {
+        return array;
+      }
+      let pivot = array[array.length - 1];
+
+      let left = [];
+      let right = [];
+      for (var i = 0; i < array.length - 1; i++) {
+        if (array[i] < pivot) {
+          //52,26,7,32,3,21,3,1,123,3=>pivot=9;
+          left.push(array[i]); //52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
+        } else {
+          right.push(array[i]); //right=[52,26,32,21,123]
+        }
+      }
+      return [...quickSort(left), pivot, ...quickSort(right)];
+  }
+  this.merge=function(left,right){
+    let sortedArray=[];
+    while(left.length && right.length){
+      if(left[0]<right[0]){
+        sortedArray.push(left.shift())
+      }else{
+        sortedArray.push(right.shift())
+      }
+    }
+    return [...sortedArray,...left,...right];
+  }
+
+  this.mergeSort=function(array){
+    if(array.length<2){
+      return array;
+    }
+    let mid=Math.floor(array.length/2);
+    let left = array.slice(0,mid);
+    let right= array.slice(mid);
+   return this.merge(this.mergeSort(left),this.mergeSort(right));
   }
 }
 let err = [
-  23, 2, 1, 34, 98, 1, 44343, 35, 23, 2, 42, 45234, 2, 4214, 2, 24, -23, -45,
+  23, 2, 1,
 ];
 let newf1 = new Myfunction(err);
+console.log(newf1.mergeSort(err));
 
 
 //insertion:
@@ -171,19 +212,21 @@ function quickSort(array){
   if(array.length<2){
     return array;
   }
-  let pivot= array.length-1;
+  let pivot = array[array.length - 1];
   
   let left =[];
   let right =[];
   for(var i=0; i<array.length-1;i++){
-    if(array[i]<pivot){ //52,26,7,32,3,21,3,1,123,3=>pivot=9;
-      left.push(array[i])//52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
-    }else{
-      right.push(array[i])//right=[52,26,32,21,123]
+    if (array[i] <pivot) {
+      //52,26,7,32,3,21,3,1,123,3=>pivot=9;
+      left.push(array[i]); //52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
+    } else {
+      right.push(array[i]); //right=[52,26,32,21,123]
     }
   }
-return [...quickSort(left),pivot ,...quickSort(right)]
+return [...quickSort(left),pivot,...quickSort(right)]
 }
+
 
 //the worst time complexity of this algorithm is : O(n^2);
 
