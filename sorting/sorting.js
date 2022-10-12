@@ -146,7 +146,7 @@ let err = [
   23, 2, 1, 34, 98, 1, 44343, 35, 23, 2, 42, 45234, 2, 4214, 2, 24, -23, -45,
 ];
 let newf1 = new Myfunction(err);
-console.log(newf1.insertionSort(err));
+
 
 //insertion:
 
@@ -158,10 +158,33 @@ console.log(newf1.insertionSort(err));
 
 // identify the pivot element in the array:
 //pick last element as pivot;
-//pick a rAsndom element as pivot;
-//picl median as pivot;
+//pick a random element as pivot;
+//pick median as pivot;
 
 //put everything thats smaller than the pivot into a 'left' array and everything that's greater than the pivot into 'right' array
 // repeat the proccess for the individual 'left' and 'right' array of the length 1 which is sorted by defination;
 
 //repeatedly concatenate the left array , pivot and right array till one sorted array remains;
+
+
+function quickSort(array){
+  if(array.length<2){
+    return array;
+  }
+  let pivot= array.length-1;
+  
+  let left =[];
+  let right =[];
+  for(var i=0; i<array.length-1;i++){
+    if(array[i]<pivot){ //52,26,7,32,3,21,3,1,123,3=>pivot=9;
+      left.push(array[i])//52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
+    }else{
+      right.push(array[i])//right=[52,26,32,21,123]
+    }
+  }
+return [...quickSort(left),pivot ,...quickSort(right)]
+}
+
+//the worst time complexity of this algorithm is : O(n^2);
+
+//the average time complexity of this algorithm is : O(nlog n)
