@@ -44,13 +44,44 @@ for example:
 
 
 function climbingStairCase(n){
-    const numOfR=[1,2]
-    for (i=2; i<=n; i++){
-        numOfR[i]=numOfR[i-1]+ numOfR[i-2]
-    }
+   const arr=[1,2];
+   for(let i=2; i<=n; i++){
+    arr[i]=arr[i-1]+ arr[i-2]
+   }
 
-   return numOfR[n-1]
+   return arr[n-1];
 
 }
-console.log(climbingStairCase(4));
-console.log(climbingStairCase(5));
+console.log(climbingStairCase(4));//output=5;
+
+//
+//[1,2,3,5,8,13]
+
+
+
+//tower of hanoi:
+/* the objective of the puzzle is to move the entire stack to the last rod ,obeing the following rules;
+1.only one disk may be move at a time.
+2.each move consists of taking the upper disk from one of the stack and placing it on top of another stack 
+or on an empty rod. an lastly,
+3.no disk may be placed on top of a disk that is smaller.
+*/
+
+
+//solution the problem of tower of hanoi:
+
+
+function towerOfHanoi(n,fromRod,toRod,usingRod){
+    if(n===1){
+        console.log(`move disk 1 from ${fromRod} to ${toRod}`);
+        return
+    }
+
+    towerOfHanoi(n-1,fromRod,usingRod,toRod);
+    console.log(`move disk ${n} from ${fromRod} to ${toRod}`);
+    towerOfHanoi(n-1,usingRod,toRod,fromRod)
+}
+
+//towerOfHanoi(4,'a','c','b')
+
+//the time complexity of this progrram is : O(2^n);
