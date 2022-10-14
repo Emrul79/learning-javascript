@@ -85,7 +85,6 @@ function insertion(array) {
   return array;
 }
 
-
 //bubble-sort implement with uniqe value:
 function bubblesort(array) {
   let switched;
@@ -104,7 +103,6 @@ function bubblesort(array) {
   return narray;
 }
 
-
 //all in constractor function:
 function Myfunction(array) {
   this.myarray = array;
@@ -112,7 +110,7 @@ function Myfunction(array) {
   this.uniqevalue = function (myarray) {
     return myarray.filter((arr, index) => myarray.indexOf(arr) === index);
   };
-  this.bubblesort=function(array){
+  this.bubblesort = function (array) {
     let switched;
     do {
       switched = false;
@@ -126,72 +124,45 @@ function Myfunction(array) {
       }
     } while (switched);
     return array;
-  }
+  };
 
-  this.insertionSort=function(array){
-    for(var i=1; i<array.length; i++){
-      let insert=array[i];
-      let priveous= i-1;
+  this.insertionSort = function (array) {
+    for (var i = 1; i < array.length; i++) {
+      let insert = array[i];
+      let priveous = i - 1;
 
-      while(priveous>=0 && array[priveous]>insert){
-        array[priveous+1]=array[priveous];
-        priveous=priveous-1;
+      while (priveous >= 0 && array[priveous] > insert) {
+        array[priveous + 1] = array[priveous];
+        priveous = priveous - 1;
       }
-      array[priveous+1] = insert;
+      array[priveous + 1] = insert;
     }
     return array;
   };
 
-  this.quickSort=function(array){
-      if (array.length < 2) {
-        return array;
-      }
-      let pivot = array[array.length - 1];
-
-      let left = [];
-      let right = [];
-      for (var i = 0; i < array.length - 1; i++) {
-        if (array[i] < pivot) {
-          //52,26,7,32,3,21,3,1,123,3=>pivot=9;
-          left.push(array[i]); //52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
-        } else {
-          right.push(array[i]); //right=[52,26,32,21,123]
-        }
-      }
-      return [...quickSort(left), pivot, ...quickSort(right)];
-  }
-  this.merge=function(left,right){
-    let sortedArray=[];
-    while(left.length && right.length){
-      if(left[0]<right[0]){
-        sortedArray.push(left.shift())
-      }else{
-        sortedArray.push(right.shift())
-      }
-    }
-    return [...sortedArray,...left,...right];
-  }
-
-  this.mergeSort=function(array){
-    if(array.length<2){
+  this.quickSort = function (array) {
+    if (array.length < 2) {
       return array;
     }
-    let mid=Math.floor(array.length/2);
-    let left = array.slice(0,mid);
-    let right= array.slice(mid);
-   return this.merge(this.mergeSort(left),this.mergeSort(right));
-  }
-}
-let err = [
-  23, 2, 1,
-];
-let newf1 = new Myfunction(err);
-console.log(newf1.mergeSort(err));
+    let pivot = array[array.length - 1];
 
+    let left = [];
+    let right = [];
+    for (var i = 0; i < array.length - 1; i++) {
+      if (array[i] < pivot) {
+        //52,26,7,32,3,21,3,1,123,3=>pivot=9;
+        left.push(array[i]); //52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
+      } else {
+        right.push(array[i]); //right=[52,26,32,21,123]
+      }
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+  };
+}
+let err = [23, 2, 1];
+let newf1 = new Myfunction(err);
 
 //insertion:
-
-
 
 //Quick sort:
 //given an array of integer ,sort the array:
@@ -207,27 +178,50 @@ console.log(newf1.mergeSort(err));
 
 //repeatedly concatenate the left array , pivot and right array till one sorted array remains;
 
-
-function quickSort(array){
-  if(array.length<2){
+function quickSort(array) {
+  if (array.length < 2) {
     return array;
   }
   let pivot = array[array.length - 1];
-  
-  let left =[];
-  let right =[];
-  for(var i=0; i<array.length-1;i++){
-    if (array[i] <pivot) {
+
+  let left = [];
+  let right = [];
+  for (var i = 0; i < array.length - 1; i++) {
+    if (array[i] < pivot) {
       //52,26,7,32,3,21,3,1,123,3=>pivot=9;
       left.push(array[i]); //52>9=left=[7,3,3,1,3]=>[3,3,1,3],[7]
     } else {
       right.push(array[i]); //right=[52,26,32,21,123]
     }
   }
-return [...quickSort(left),pivot,...quickSort(right)]
+  return [...quickSort(left), pivot, ...quickSort(right)];
 }
-
 
 //the worst time complexity of this algorithm is : O(n^2);
 
 //the average time complexity of this algorithm is : O(nlog n)
+
+function mergeSort(array) {
+  if(array.length<2){
+    return array
+  }
+  let middle = Math.floor(array.length / 2);
+  let left = array.slice(0, middle);
+
+  let right = array.slice(middle);
+  return merge(mergeSort(left), mergeSort(right));
+}
+function merge(leftArray, rightArray) {
+  let sortedArray = [];
+  while (leftArray.length && rightArray.length) {
+    if (leftArray[0] <= rightArray[0]) {
+      sortedArray.push(leftArray.shift());
+    } else {
+      sortedArray.push(rightArray.shift());
+    }
+  }
+  return [...sortedArray, ...leftArray, ...rightArray];
+}
+
+let myArr = [2, -1, 23, 1, 3, 21, 1, 32, 3, 123, 12, 2, -23, -43];
+console.log(mergeSort(myArr));
