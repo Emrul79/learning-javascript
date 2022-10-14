@@ -37,5 +37,20 @@ for example:
 
     *at any given time , you can climb eaither 1 step and 2 steps;
     *if you have to climb to step "n", we can only climb for step"n-1" or "n-2"
-               
+    *calculate the ways camn climb to "n-1" and "n-2"  steps and add the two;
+    *climbingStairCase(n)= climbingStairCase(n-1) +       climbingStairCase(n-2)       
 */
+
+
+
+function climbingStairCase(n){
+    const numOfR=[1,2]
+    for (i=2; i<=n; i++){
+        numOfR[i]=numOfR[i-1]+ numOfR[i-2]
+    }
+
+   return numOfR[n-1]
+
+}
+console.log(climbingStairCase(4));
+console.log(climbingStairCase(5));
