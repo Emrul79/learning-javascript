@@ -61,3 +61,4 @@ function myTwoSum(array,target){
   }
 }
 myTwoSum([12, 5, 75, 4, 65, 3, 21, 1, 2], 67);
+myTwoSum([12, 5, 75, 49, 65, 3, 21, 1, 2], 67);
